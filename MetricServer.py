@@ -1,8 +1,6 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from io import StringIO
 from json import dump
-import argparse
-
 
 class MetricServerHandler(BaseHTTPRequestHandler):
     metrics = []
