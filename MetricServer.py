@@ -4,7 +4,7 @@ from json import dump
 
 
 class MetricServerHandler(BaseHTTPRequestHandler):
-    metrics = [{1: 2}]
+    metrics = []
 
     def do_GET(self):
         self.send_response(200)
