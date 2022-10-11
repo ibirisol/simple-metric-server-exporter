@@ -1,6 +1,7 @@
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from io import StringIO
 from json import dump
+import argparse
 
 
 class MetricServerHandler(BaseHTTPRequestHandler):
@@ -37,9 +38,8 @@ def run(address='', port=8080):
 if __name__ == "__main__":  
     from sys import argv
   
-    if len(argv) == 3:
-        run(address=int(argv[1]), port=int(argv[2]))
-    elif len(argv) == 2:
-        run(address=int(argv[1]))
+    if len(argv) > 1:
+        port = int(argv[1])
+        run(port=port)
     else:
         run()
